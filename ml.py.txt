@@ -1,0 +1,16 @@
+from sklearn.feature_extraction.text import CountVectorizer
+from nltk.corpus import stopwords
+from nltk.stem.snowball import SnowballStemmer
+import nltk
+nltk.download()
+stemmer=SnowballStemmer("english")
+a=stemmer.stem("unreponsive")
+print(a)
+vectorize= CountVectorizer()
+string1="this is a great hotel loved the stay here"
+string2="room service is very bad and late"
+relist=[string1,string2]
+bagwords=vectorize.fit(relist)
+bagwords=vectorize.transform(relist)
+
+print(bagwords)
